@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9e309ee0.css",
+    "main.js": "/static/js/main.ae03dfea.js",
+    "static/media/pepsi.png": "/static/media/pepsi.2a95f688fc208777f47b.png",
+    "static/media/7.pepsi_432x1024.png": "/static/media/7.pepsi_432x1024.c133acd493f66314ddb8.png",
+    "static/media/family.jpeg": "/static/media/family.c0f368f9033f7aedd411.jpeg",
+    "static/media/Pepsi-logo.png": "/static/media/Pepsi-logo.7be9f137ea7a921866b7.png",
+    "index.html": "/index.html",
+    "main.9e309ee0.css.map": "/static/css/main.9e309ee0.css.map",
+    "main.ae03dfea.js.map": "/static/js/main.ae03dfea.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9e309ee0.css",
+    "static/js/main.ae03dfea.js"
+  ]
+}
