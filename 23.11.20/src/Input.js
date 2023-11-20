@@ -3,7 +3,7 @@ import { useState } from "react";
 
 export default function Input() {
   const [value, setValue] = useState();
-  const names = ["Marija", "Andrius", "Tomas", "Viktorija", "Justina"];
+  const names = ["Marija", "Andrius", "Tomas", "Viktorija", "Justina", "Laima", "Arvydas","Elena", "Dominyka", "Giedrius", "Justinas"];
 
   const handleChange = (e) => {
     // e.preventDefault()
