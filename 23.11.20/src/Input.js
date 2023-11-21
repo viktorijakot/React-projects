@@ -2,24 +2,30 @@ import "./Input.css";
 import { useState } from "react";
 
 export default function Input() {
-  const [value, setValue] = useState();
-  const [selected, setSelected] = useState()
-  const names = ["Marija", "Andrius", "Tomas", "Viktorija", "Justina", "Laima", "Arvydas","Elena", "Dominyka", "Giedrius", "Justinas"];
- 
+  const [value, setValue] = useState("");
+  const names = [
+    "Marija",
+    "Andrius",
+    "Tomas",
+    "Viktorija",
+    "Justina",
+    "Laima",
+    "Arvydas",
+    "Elena",
+    "Dominyka",
+    "Giedrius",
+    "Justinas",
+  ];
+
   const handleChange = (e) => {
-    // e.preventDefault()
-    return setValue(
-      e.target.value
-        ? names.filter((name) =>
-            name.toLowerCase().includes(e.target.value.toLowerCase())
-          )
-        : ""
-    );
+    setValue(e.target.value);
   };
 
-  const selectEl = (e) => {
-     return setSelected(e.target.text) 
-   }
+  const filterNames = (names) => {
+    return value
+      ? names.filter((name) => name.toLowerCase().includes(value.toLowerCase()))
+      : [];
+  };
 
   return (
     <>
@@ -29,18 +35,18 @@ export default function Input() {
           className="form-control"
           name="tekstas"
           placeholder="Įveskite vardą"
-          onKeyUp={handleChange}
-          value={selected}
+          onChange={handleChange}
+          value={value}
         />
 
         <ul>
-          {value
-            ? value.map((el, i) => (
-                <li key={i}>
-                  <a href="#" onClick={selectEl}>{el}</a>
-                </li>
-              ))
-            : value}
+          {filterNames(names).map((el, i) => (
+            <li key={i}>
+              <a href="#" onClick={() => setValue(el)}>
+                {el}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
     </>
