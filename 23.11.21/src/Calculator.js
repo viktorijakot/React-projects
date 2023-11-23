@@ -8,13 +8,20 @@ export default function Calculator() {
     res: 0,
   });
 
-  const [style, setStyle] = useState ({color1: "rgb(0, 0, 0,.8)",
-color2: "rgb(0, 0, 0,.3)"})
+  // const [style, setStyle] = useState({
+  //   color1: "rgb(0, 0, 0,.8)",
+  //   color2: "rgb(0, 0, 0,.3)",
+  //   color3:"rgb(0, 0, 0,.3)",
+  //   status: false,
+  // });
 
-  const changeColor = () => {
-    style.color1 !== "rgb(0, 0, 0,.8)" ? style.color1 = "rgb(0, 0, 0,.8)" : style.color1 = "rgb(0, 0, 0,.3)"
-    style.color2 !== "rgb(0, 0, 0,.3)" ? style.color2 = "rgb(0, 0, 0,.3)" : style.color2 = "rgb(0, 0, 0,.1)"
-  }
+  // const changeColor = (e) => {
+  //   style.status = !style.status;
+
+  //   !style.status
+  //     ? setStyle({...style, color2: "rgb(0, 0, 0,.3)", color3: "rgb(0, 0, 0,.3)" })
+  //     : setStyle({...style, color2: "rgb(0, 0, 0,.1)", color3: "rgb(0, 0, 0,.1)"});
+  // };
 
   const numClickHandler = (e) => {
     e.preventDefault();
@@ -30,7 +37,6 @@ color2: "rgb(0, 0, 0,.3)"})
           : calc.num + value,
       res: !calc.sign ? 0 : calc.res,
     });
-    changeColor()
     console.log(calc);
   };
 
@@ -62,7 +68,7 @@ color2: "rgb(0, 0, 0,.3)"})
         ...calc,
         res:
           calc.num === "0" && calc.sign === "/"
-            ? "Error, you can't devide with 0"
+            ? "Error"
             : math(calc.num, calc.res, calc.sign),
         sign: "",
         num: 0,
@@ -73,21 +79,47 @@ color2: "rgb(0, 0, 0,.3)"})
 
   const acClickHandler = () => {
     setCalc({ sign: "", num: 0, res: 0 });
-    changeColor()
   };
   return (
     <div className="calculator">
-      <div className="result">{calc.num ? calc.num : calc.res}</div>
+      <div className="result">
+        {calc.num && calc.sign && calc.res
+          ? calc.res + calc.sign + calc.num
+          : calc.res && calc.sign
+          ? calc.res + calc.sign
+          : calc.num
+          ? calc.num
+          : calc.res}
+      </div>
       <div className="row">
-        <button className="ac" onClick={acClickHandler} style={{backgroundColor:style.color1}}>
+        <button
+          className="ac"
+          onClick={(e) => {
+            acClickHandler(e);
+          }}
+        >
           AC
         </button>
       </div>
       <div className="row">
-        <button className="number" onClick={numClickHandler} style={{backgroundColor:style.color2}}>
+        <button
+          className="number"
+          onClick={(e) => {
+            numClickHandler(e);
+            // changeColor(e);
+          }}
+          // style={{ backgroundColor: style.color2 }}
+        >
           7
         </button>
-        <button className="number" onClick={numClickHandler} style={{backgroundColor:style.color2}}>
+        <button
+          className="number"
+          onClick={(e) => {
+            numClickHandler(e);
+            // changeColor(e);
+          }}
+          // style={{ backgroundColor: style.color3 }}
+        >
           8
         </button>
         <button className="number" onClick={numClickHandler}>

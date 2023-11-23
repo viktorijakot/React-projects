@@ -39,9 +39,13 @@ button {
   display: flex;
   height: 60px;
 }
-/* .ac{
+.ac{
   background-color: rgb(0, 0, 0,.8);
-} */
+}
+
+.ac:active{
+  background-color: rgb(0, 0, 0,.3);
+}
 
 .size {
   width: 202%;
@@ -49,7 +53,14 @@ button {
 .number {
   background-color:rgb(0, 0, 0,.3); 
 }
+.number:active{
+  background-color:rgb(0, 0, 0,.1)
+}
 
 .symbol{
   background-color: rgb(228, 142, 37);
+}
+
+.symbol:active{
+  background-color: rgb(228, 142, 37, .3);
 }
