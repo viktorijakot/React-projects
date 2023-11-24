@@ -37,7 +37,10 @@ export default function Calculator() {
           : calc.num + value,
       res: !calc.sign ? 0 : calc.res,
     });
-    console.log(calc);
+    console.log(calc.num);
+    console.log(calc.num%1)
+    console.log(Number(calc.num + value))
+    console.log(calc.num + value)
   };
 
   const signClickHandler = (e) => {
