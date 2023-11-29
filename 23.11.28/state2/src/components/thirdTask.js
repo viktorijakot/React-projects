@@ -32,6 +32,7 @@ export default function Third() {
           <button
             onClick={() => {
               let value = number + 1;
+
               setNumber(value);
               localStorage.setItem("data", JSON.stringify(value));
               console.log(num);
