@@ -4,7 +4,8 @@ import { useState } from "react";
 export default function Password() {
   const everything =
     "ABCDEFGHIJKLMNOPRSTVWZabcdefghijklmnoprstvwz1234567890!@#$%^&*()_+=-{[}]:;~±§|/.,><";
-  const noSymbols = "ABCDEFGHIJKLMNOPRSTVWZabcdefghijklmnoprstvwz12345678901234567890";
+  const noSymbols =
+    "ABCDEFGHIJKLMNOPRSTVWZabcdefghijklmnoprstvwz12345678901234567890";
   const noNumbers =
     "ABCDEFGHIJKLMNOPRSTVWZabcdefghijklmnoprstvwz!@#$%^&*()_+=-{[}]:;~±§|/.,><";
   const letters = "ABCDEFGHIJKLMNOPRSTVWZabcdefghijklmnoprstvwz";
@@ -99,3 +100,22 @@ export default function Password() {
     </>
   );
 }
+
+const password = [
+  { key: "a", value: "letter" },
+  { key: "1", value: "number" },
+];
+
+password.map((item) => <span className={item.value}>{item.key}</span>);
+
+const letters = "as13{}{)";
+
+letters.split("").map((item) => {
+  if (typeof +item === "number") {
+    return <span className="number">{item}</span>
+  } else if (typeof item === "string") {
+    return <span className="string">{item}</span>
+  } else {
+    return <span className="else">{item}</span>
+  }
+})
