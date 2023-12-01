@@ -1,0 +1,64 @@
+.card {
+  position: fixed;
+  top: 15%;
+  left: 34%;
+  z-index: 3;
+
+}
+.container {
+    height: 400px;
+  width: 400px;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+}
+.close {
+    cursor: pointer;
+    text-align: right;
+    padding-right: 15px;
+    padding-top: 15px;
+}
+.close:hover {
+    font-size: larger;
+    transition-duration: 0.25s;
+}
+
+.sign {
+    margin-left: 40px;
+    margin-top: 30px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    margin-top: 30px;
+    gap:10px
+}
+
+.input {
+    width: 90%;
+    height: 50px;
+    background-color: rgb(48, 47, 47);
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding-left: 15px;
+    color: white;
+}
+
+.button {
+    width: 90%;
+    height: 50px;
+    border-radius: 5px;
+    color: white;
+    background-color: #e50815;
+    border: none;
+    cursor: pointer;
+    font-size: large;
+    font-weight: bolder;
+    margin-top: 30px;
+}
+.button:hover{
+    background-color: rgb(193, 17, 25);
+    transition-duration: 0.25s;
+}

@@ -1,0 +1,85 @@
+
+.inputBox {
+    width: 40%;
+    height: 56px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid grey;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bolder;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  
+  .button {
+    height: 56px;
+    width: 30%;
+    background-color: #e50815;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bolder;
+    cursor: pointer;
+  }
+  .button:hover {
+    background-color: rgb(193, 17, 25);
+    transition-duration: 0.25s;
+  }
+  
+  .form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    /* margin-bottom: 80px; */
+    
+  }
+  
+  .input {
+    width: 90%;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 15px;
+    margin-left: 10px;
+  }
+  .key {
+    height: 20px;
+    background-color: grey;
+    padding: 3px;
+    margin-right: 5px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+  .form{
+    width: 100%;
+    line-height: 50px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+  .email {
+    font-size: 10px;
+    margin-left: 15px;
+    margin-bottom: -35px;
+    text-align: left;
+  }
+
+  @media screen and (min-width: 690px){
+    .form{
+      width: 70%;
+    }
+    .input{
+      font-size: 20px;
+    }
+  }
+  
+  @media screen and (min-width: 1440px){
+    .form{
+      width: 50%;
+    }
+  }

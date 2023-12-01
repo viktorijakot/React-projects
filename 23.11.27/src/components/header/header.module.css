@@ -1,0 +1,57 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+}
+.logo {
+  height: 25px;
+}
+
+.box {
+  display: flex;
+  gap: 10px;
+  width: 60%;
+}
+
+.select {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  height: 32px;
+  width: 60%;
+  padding-left: 10px;
+  font-size: 15px;
+  font-weight: bolder;
+  border: 1px solid grey;
+  border-radius: 5px;
+  outline:none;
+}
+
+.butt {
+  background-color: #e50815;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  height: 32px;
+  width: 40%;
+  font-size: 14px;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.butt:hover {
+  background-color: rgb(193, 17, 25);
+  transition-duration: 0.25s;
+}
+
+@media screen and (min-width: 690px){
+  .box{
+    width: 30%;
+  }
+}
+
+@media screen and (min-width: 1440px){
+  .box{
+    width: 20%;
+  }
+}
