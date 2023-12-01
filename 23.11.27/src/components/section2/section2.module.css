@@ -1,18 +1,22 @@
 .section {
   margin-top: 5px;
   background-color: black;
+  height: 100vh;
+
+
 }
 .container {
   text-align: center;
   color: white;
   line-height: 60px;
-  padding-top: 100px;
+  padding-top: 20px;
   /* position: absolute; */
   /* background-color: black; */
   z-index: -2;
   font-size: 18px;
-  padding-bottom: 80px;
-  margin: 10px 10px;
+  /* padding-bottom: 80px; */
+  margin: 0px 10px;
+  padding-top: 100px;
 }
 .title {
   font-size: 2rem;

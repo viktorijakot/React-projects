@@ -14,6 +14,7 @@ export default function Section1({addCard}) {
         />
         <div className={styles.background2}>
           <Header addCard={addCard}/>
+          <div className={styles.bigContainer}>
           <div className={styles.container}>
             <h1 className={styles.title}>Unlimited movies, TV shows, and more</h1>
             <p>Watch anywhere. Cancel anytime</p>
@@ -22,6 +23,7 @@ export default function Section1({addCard}) {
               membership.
             </p>
            <Form/>
+          </div>
           </div>
         </div>
         </div>

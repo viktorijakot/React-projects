@@ -1,6 +1,7 @@
 .section {
     margin-top: 5px;
     background-color: black;
+    height: 100vh;
   }
   .container {
     text-align: center;

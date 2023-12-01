@@ -19,7 +19,10 @@ export default function Card({ removeCard }) {
               type="password"
               placeholder="Password"
             />
-            <button className={styles.button}>Sign in</button>
+            <button className={styles.button} onClick={(e) => {
+              removeCard();
+              e.preventDefault()
+              }}>Sign in</button>
           </form>
         </div>
       </div>
