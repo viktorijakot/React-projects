@@ -22,7 +22,9 @@ export default function Section1({addCard}) {
               Ready to watch? Enter your email to create or restart your
               membership.
             </p>
-           <Form/>
+
+           <Form />
+
           </div>
           </div>
         </div>
