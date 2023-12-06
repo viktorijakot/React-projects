@@ -4,8 +4,11 @@ export default function Create({ setCreate, setInfo, info, addMessage }) {
     if(e.target.firstChild.value.length === 0) {
       addMessage("danger", "Name and surname are missing");
       return 
+    } else if (e.target.firstChild.value.split(" ")[1] === undefined ){
+      addMessage("danger", "Name or surname is missing");
+      return 
     }
-    console.log(e.target.firstChild.value.length)
+    console.log(e.target.firstChild.value.split(" ")[1])
     let firstName = e.target.firstChild.value.split(" ")[0];
     let lastName = e.target.firstChild.value.split(" ")[1];
     setCreate({
@@ -20,7 +23,7 @@ export default function Create({ setCreate, setInfo, info, addMessage }) {
         <h2>New bank account</h2>
         <label>Enter person's name and surname</label>
         <form className="flex" onSubmit={add}>
-          <input className="input" type="text" name="surname"  />
+          <input className="input" type="text" name="surname" placeholder="Michael Scott"/>
           <button type="submit" className="button">
             ADD
           </button>

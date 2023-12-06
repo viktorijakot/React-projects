@@ -1,13 +1,20 @@
 import { useState } from "react";
-export default function List({ account, setRemove, setEdit, edit, setUpdate, addMessage }) {
+export default function List({
+  account,
+  setRemove,
+  setEdit,
+  edit,
+  setUpdate,
+  addMessage,
+}) {
   const [add, setAdd] = useState(false);
   const [fund, setFund] = useState(0);
 
   const handleFunds = (e) => {
     e.preventDefault();
     // setEdit(null)
-    if(fund === 0){
-        addMessage("danger", "Amount is missing");
+    if (fund === 0) {
+      addMessage("danger", "Amount is missing");
     }
 
     if (add) {
@@ -22,8 +29,7 @@ export default function List({ account, setRemove, setEdit, edit, setUpdate, add
       <div className="list">
         <h2>Accounts</h2>
         <div>
-          {account !== null &&
-            account.length !== 0 ?
+          {account !== null && account.length !== 0 ? (
             account
               .sort((a, b) => {
                 if (a.surname.toLowerCase() < b.surname.toLowerCase()) {
@@ -82,7 +88,10 @@ export default function List({ account, setRemove, setEdit, edit, setUpdate, add
                     </div>
                   </div>
                 </form>
-              )) : <p>There is no accounts yet</p>}
+              ))
+          ) : (
+            <p>There is no accounts yet</p>
+          )}
         </div>
       </div>
     </>
