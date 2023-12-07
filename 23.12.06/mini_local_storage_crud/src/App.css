@@ -1,0 +1,65 @@
+.App {
+  text-align: center;
+}
+
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding-top: 40px;
+}
+
+.info{
+  width: 20%;
+  border: 1px solid grey;
+  /* display: flex;
+  flex-direction: column;
+  align-items: flex-start; */
+  padding-left: 10px;
+}
+.state{
+  color:cornflowerblue;
+  font-weight: 500;
+}
+.setInfo{
+  display: flex;
+  flex-direction: column;
+}
+input{
+  margin: 5px 5px;
+  height: 100%;
+  outline: none;
+}
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.box {
+  border: 1px solid grey;
+}
+button{
+  width: 50%;
+  margin: 5px 5px;
+background-color: grey;
+border: none;
+border-radius: 5px;
+color: white;
+cursor: pointer;
+}
+button:hover {
+  background-color: rgba(128, 128, 128, 0.363);
+  border: 0.5px solid grey;
+  transition-duration: 0.25s;
+}
+.boxCreate {
+  width: 34.8%;
+  border: 1px solid grey; 
+  margin-bottom: 20px;
+}
