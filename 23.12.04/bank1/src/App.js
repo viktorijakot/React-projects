@@ -19,8 +19,6 @@ export default function App() {
   const KEY = "account";
 
   useEffect(() => {
-    // console.log(remove);
-    // console.log(clear);
     setAccount(read(KEY));
   }, [clear, remove]);
 
@@ -30,8 +28,8 @@ export default function App() {
     }
     const id = store(KEY, create);
     setAccount((c) => [{ ...create, id }, ...c]);
-    // getName(create.color, id);
-    addMessage("success", "Account is created");
+  
+    addMessage("success", <p>{`Account `}<strong className="different">{create.name+ " "+ create.surname}</strong>{` is created`}</p>);
   }, [create]);
 
   useEffect(() => {
@@ -42,7 +40,7 @@ export default function App() {
     setAccount((c) => c.filter((acc) => acc.id !== clear.id));
     setClear(null);
     setRemove(null);
-    addMessage("danger", "Account is deleted");
+    addMessage("danger", <p>{`Account `}<strong className="different">{ clear.surname+ " "+ clear.name}</strong>{` was deleted`}</p>);
   }, [clear]);
 
   useEffect(() => {

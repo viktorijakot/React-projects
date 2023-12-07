@@ -1,20 +1,24 @@
-export default function Create({ setCreate, setInfo, info, addMessage }) {
+export default function Create({ setCreate, addMessage, account }) {
   const add = (e) => {
     e.preventDefault();
-    if(e.target.firstChild.value.length === 0) {
+   if (/[0-9]/.test(e.target.firstChild.value)) {
+      addMessage("danger", "Text should not have numbers");
+      return
+    } else if(e.target.firstChild.value.length === 0) {
       addMessage("danger", "Name and surname are missing");
       return 
-    } else if (e.target.firstChild.value.split(" ")[1] === undefined ){
+    } else if (e.target.firstChild.value.split(" ")[1] === undefined || e.target.firstChild.value.split(" ")[1] === ""){
       addMessage("danger", "Name or surname is missing");
       return 
-    }
-    console.log(e.target.firstChild.value.split(" ")[1])
+    } 
+
     let firstName = e.target.firstChild.value.split(" ")[0];
     let lastName = e.target.firstChild.value.split(" ")[1];
     setCreate({
-      name: firstName,
-      surname: lastName,
-      funds: 0
+      name: firstName.charAt(0).toUpperCase() + firstName.slice(1),
+      surname: lastName.charAt(0).toUpperCase() + lastName.slice(1),
+      funds: 0,
+      accountNumber: (Math.random() * 1000000000000000000) + 1
     });
   }
   return (

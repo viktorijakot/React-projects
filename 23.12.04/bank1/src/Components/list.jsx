@@ -13,8 +13,9 @@ export default function List({
   const handleFunds = (e) => {
     e.preventDefault();
     // setEdit(null)
-    if (fund === 0) {
-      addMessage("danger", "Amount is missing");
+    if (fund <= 0) {
+      addMessage("danger", "Amount should not be 0 or less");
+      return;
     }
 
     if (add) {
@@ -43,10 +44,7 @@ export default function List({
               .map((item) => (
                 <form onSubmit={handleFunds} className="item" key={item.id}>
                   <li className="names">
-                    <p>
-                      {item.surname + " " + item.name}
-                      <strong className="strong">${item.funds}</strong>
-                    </p>
+                    <p className="font">{item.surname + " " + item.name}</p>
                     <div>
                       <button
                         type="button"
@@ -60,8 +58,17 @@ export default function List({
                       </button>
                     </div>
                   </li>
+                  <div className="names1">
+                    <p className="acc">LT{item.accountNumber}</p>
+                    <strong className="strong">${item.funds}</strong>
+                  </div>
                   <div className="flex">
-                    <input type="number" name="funds" className="input" />
+                    <input
+                      type="number"
+                      name="funds"
+                      className="input"
+                      placeholder="Enter amount"
+                    />
                     <div>
                       <button
                         type="submit"
@@ -90,7 +97,10 @@ export default function List({
                 </form>
               ))
           ) : (
-            <p>There is no accounts yet</p>
+            <>
+            <p>There is no accounts yet ...</p>
+            <p>You can create a <strong>new account</strong> there <strong>⇪</strong></p>
+            </>
           )}
         </div>
       </div>
