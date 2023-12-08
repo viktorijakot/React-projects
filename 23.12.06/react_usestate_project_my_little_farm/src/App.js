@@ -1,40 +1,75 @@
 import "./App.css";
-import Left from "./Components/leftSide";
-import Right from "./Components/rightSide";
 import { useState, useEffect } from "react";
+import Animals from "./Components/animals";
 
 function App() {
   const [click, setClick] = useState(false);
-  const [clickKarve, setClickKarve] = useState(false);
-  const [editKarve, setEditKarve] = useState(null);
-  const [clickAvis, setClickAvis] = useState(false);
-  const [editAvis, setEditAvis] = useState(null);
+  const [karves, setKarves] = useState([]);
+  const [avys, setAvys] = useState([]);
+
+  const rand = (min, max) => {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  };
+
+  const arrayKarves = [];
+  const arrayAvys = [];
+  const k = "K";
+  const a = "A";
+
+  const handleAnimalsLength = (array, letter) => {
+    for (let i = 0; i < rand(5, 20); i++) {
+      array.push(
+        letter +
+          rand(0, 9) +
+          rand(0, 9) +
+          rand(0, 9) +
+          rand(0, 9) +
+          rand(0, 9) +
+          rand(0, 9) +
+          rand(0, 9)
+      );
+    }
+    return array;
+  };
+
+  const handleClick = () => {
+    handleAnimalsLength(arrayKarves, k);
+    handleAnimalsLength(arrayAvys, a);
+    setKarves(arrayKarves);
+    setAvys(arrayAvys);
+    setClick(true);
+  };
+
+  useEffect(() => {
+    if (click) {
+      localStorage.setItem("karves", JSON.stringify(karves));
+      localStorage.setItem("avys", JSON.stringify(avys));
+      setClick(false);
+    } else {
+      const storedKarves = JSON.parse(localStorage.getItem("karves"));
+      const storedAvys = JSON.parse(localStorage.getItem("avys"));
+
+      if (storedKarves || storedAvys) {
+        setKarves(storedKarves);
+        setAvys(storedAvys);
+      }
+    }
+  }, [click]);
 
   return (
     <div className="App">
       <header className="App-header">
-        <div className="container">
-          <Left
-            click={click}
-            setClickKarve={setClickKarve}
-            setEditKarve={setEditKarve}
-            clickKarve={clickKarve}
-            clickAvis={clickAvis}
-            editAvis={editAvis}
-          />
-          <Right
-            click={click}
-            clickKarve={clickKarve}
-            editKarve={editKarve}
-            setClickAvis={setClickAvis}
-            setEditAvis={setEditAvis}
-            clickAvis={clickAvis}
-            editAvis={editAvis}
-          />
-        </div>
-        <button type="button" onClick={(e) => {
-          e.preventDefault()
-          setClick(!click)}}>
+        <Animals
+          karves={karves}
+          avys={avys}
+          setKarves={setKarves}
+          setAvys={setAvys}
+          setClick={setClick}
+          click={click}
+        />
+        <button type="button" onClick={handleClick}>
           Į ganyklą
         </button>
       </header>
